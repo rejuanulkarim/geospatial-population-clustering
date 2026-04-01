@@ -50,7 +50,7 @@ k_distances = np.sort(distances[:, min_samples - 1])
 
 eps_dynamic = np.percentile(k_distances, 96)
 
-print("--- Analysis Report ---")
+print(" Analysis Report ")
 print(f"EPS selected: {eps_dynamic:.2f} meters")
 
  
