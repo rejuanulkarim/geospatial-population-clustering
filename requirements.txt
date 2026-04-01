@@ -1,0 +1,6 @@
+geopandas
+folium
+numpy
+matplotlib
+scikit-learn
+rtree
