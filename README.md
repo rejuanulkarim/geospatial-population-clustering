@@ -33,7 +33,7 @@ python main.py
 ## Files
 
 * `main.py` – main code
-* `Gorabazar.geojson` – dataset
+* `Sector_I.geojson` – dataset
 * `requirements.txt` – dependencies
 
 ## Author
