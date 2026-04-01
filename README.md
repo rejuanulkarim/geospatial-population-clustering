@@ -18,7 +18,7 @@ This project estimates population at building level using GIS data and identifie
 
 ## Screenshot
 
-![Output Map](output.png)
+![Output Map](Sector_I_Output_Screenshot.png)
 
 
 ## How to Run
