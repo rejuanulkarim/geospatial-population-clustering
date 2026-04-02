@@ -36,7 +36,5 @@ python main.py
 * `Sector_I.geojson` – dataset
 * `requirements.txt` – dependencies
 
-## Author
 
-Rejuanul Karim
 
