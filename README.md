@@ -1,4 +1,3 @@
-
 # Geospatial Population Estimation and Clustering
 
 ## Overview
@@ -20,7 +19,6 @@ This project estimates population at building level using GIS data and identifie
 
 ![Output Map](Sector_I_Output_Screenshot.png)
 
-
 ## How to Run
 
 ```bash
@@ -30,11 +28,21 @@ pip install -r requirements.txt
 python main.py
 ```
 
+## Dataset
+
+* Small datasets are included in the repository
+* Large dataset (`Maghyamgram_2km.zip`) must be extracted before running
+
 ## Files
 
 * `main.py` – main code
-* `Sector_I.geojson` – dataset
+* `data/` – dataset files
 * `requirements.txt` – dependencies
 
 
+## Authors
 
+* Rejuanul Karim – B.Tech CSE Student
+* Debalina Paul – B.Tech CSE Student
+* Kalyan Kumar Das – Supervisor
+* Anirban Mukhopadhyay – Co-Supervisor
