@@ -11,7 +11,7 @@ from folium.plugins import HeatMap
 
 # 1. Load Dataset and Reproject 
 
-buildings = gpd.read_file('Sector_I.geojson').to_crs(epsg=32645)
+buildings = gpd.read_file('data/Sector_I.geojson').to_crs(epsg=32645)
 
 
 # 2. Compute Area
