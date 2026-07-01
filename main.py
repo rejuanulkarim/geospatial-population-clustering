@@ -87,7 +87,7 @@ def get_weighted_center(df):
     w_y = (df['cent_y'] * df['population']).sum() / total_pop
     return w_x, w_y
 
-clustered_data = buildings
+clustered_data = buildings[buildings['cluster'] != -1] #only valid clusters
 final_x, final_y = get_weighted_center(clustered_data)
 
 cluster_centers = {}
@@ -148,7 +148,7 @@ HeatMap(heat_data, name="Population Density", radius=15, blur=12).add_to(m)
  
 cluster_group = folium.FeatureGroup(name="Cluster Centers")
 for c, (cx, cy) in cluster_centers.items():
-    if c == -1: continue
+    
     cp_gdf = gpd.GeoDataFrame(geometry=gpd.points_from_xy([cx], [cy]), crs=32645).to_crs(epsg=4326)
     folium.CircleMarker(
         location=[cp_gdf.geometry.y.iloc[0], cp_gdf.geometry.x.iloc[0]],
@@ -187,7 +187,7 @@ m.save(output_file)
 
 print("Map saved successfully!")
 print(f"Total Buildings: {len(buildings)}")
-print(f"Total Clusters: {len(cluster_centers)-1}")
+print(f"Total Clusters: {len(cluster_centers)}")
 
 # Automatically open the map in your default browser
 webbrowser.open('file://' + os.path.realpath(output_file))
