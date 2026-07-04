@@ -72,7 +72,12 @@ if len(noise) > 0 and len(clustered) > 0:
     nbrs = NearestNeighbors(n_neighbors=1).fit(clustered[['cent_x','cent_y']])
     distances, indices = nbrs.kneighbors(noise[['cent_x','cent_y']])
     nearest_clusters = clustered.iloc[indices.flatten()]['cluster'].values
+    # selected_rows = clustered.iloc[indices.flatten()]
+    # selected_column = selected_rows['cluster']
+    # nearest_clusters = selected_column.values
     buildings.loc[dbscan_noise_mask, 'cluster'] = nearest_clusters
+ 
+    # DataFrame.loc[row_selection, column_selection]
 
 buildings.loc[area_noise_mask, 'cluster'] = -1
 
