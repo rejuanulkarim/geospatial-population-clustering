@@ -143,13 +143,13 @@ centroids_4326 = gpd.GeoSeries(
     crs=32645
 ).to_crs(epsg=4326)
 
-final_point_gdf = gpd.GeoDataFrame(
-    geometry=gpd.points_from_xy([final_x], [final_y]),
+final_point_gdf = gpd.GeoSeries(
+    gpd.points_from_xy([final_x], [final_y]),
     crs=32645
 ).to_crs(epsg=4326)
 
-final_lat = final_point_gdf.geometry.y.iloc[0]
-final_lon = final_point_gdf.geometry.x.iloc[0]
+final_lat = final_point_gdf.y.iloc[0]
+final_lon = final_point_gdf.x.iloc[0]
 
  
 # 10. Create Map
