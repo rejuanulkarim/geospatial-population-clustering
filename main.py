@@ -100,7 +100,41 @@ for c in clustered_data['cluster'].unique():
     subset = clustered_data[clustered_data['cluster'] == c]
     cluster_centers[c] = get_weighted_center(subset)
 
- 
+
+
+
+
+# def get_weighted_center(df):
+#     total_pop = df['population'].sum()
+
+#     if total_pop == 0:
+#         return ( df['cent_x'].mean(), df['cent_y'].mean(),0)
+#     w_x = (df['cent_x'] * df['population']).sum() / total_pop
+#     w_y = (df['cent_y'] * df['population']).sum() / total_pop
+#     return w_x, w_y, total_pop
+
+
+# clustered_data = buildings[buildings['cluster'] != -1]
+
+# cluster_centers = {}
+# global_center_data = []
+
+# for c in clustered_data['cluster'].unique():
+#     subset = clustered_data[clustered_data['cluster'] == c]
+#     cx, cy, pop = get_weighted_center(subset)
+#     cluster_centers[c] = (cx, cy)
+#     global_center_data.append({
+#         'cent_x': cx,
+#         'cent_y': cy,
+#         'population': pop
+#     })
+
+# global_center_df = gpd.GeoDataFrame(global_center_data)
+# final_x, final_y, _ = get_weighted_center(global_center_df)
+
+
+
+
 # 9. Convert to Lat/Lon
  
 buildings_4326 = buildings.to_crs(epsg=4326)
